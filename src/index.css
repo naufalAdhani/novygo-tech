@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #05060F;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #05060F;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #FF6B35;
+    border-radius: 2px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-brand-orange to-brand-pink text-white font-syne font-bold
+           px-8 py-3.5 rounded-full cursor-pointer border-none
+           transition-all duration-300 text-sm tracking-wide
+           hover:-translate-y-0.5 hover:shadow-brand;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-white border border-white/30 rounded-full
+           px-7 py-3.5 font-syne font-semibold text-sm cursor-pointer
+           transition-all duration-300
+           hover:border-brand-orange hover:text-brand-orange;
+  }
+
+  .section-label {
+    @apply font-dm text-xs font-medium tracking-[3px] text-brand-orange uppercase mb-4;
+  }
+
+  .section-title {
+    @apply font-syne font-extrabold leading-tight;
+    font-size: clamp(32px, 5vw, 52px);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-orange via-brand-pink to-brand-purple
+           bg-clip-text text-transparent;
+  }
+
+  .card-base {
+    @apply bg-white/[0.03] border border-white/[0.08] rounded-2xl
+           transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card-base hover:-translate-y-2 hover:shadow-brand-sm;
+  }
+
+  .nav-link {
+    @apply font-dm text-sm text-white/70 cursor-pointer pb-0.5
+           border-b-2 border-transparent font-medium tracking-wide
+           transition-all duration-300
+           hover:text-brand-orange hover:border-brand-orange;
+  }
+
+  .form-input {
+    @apply w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5
+           text-white font-dm text-sm outline-none
+           transition-colors duration-300 placeholder:text-white/35
+           focus:border-brand-orange;
+  }
+
+  .tag {
+    @apply inline-block text-[11px] font-semibold font-dm px-2.5 py-1 rounded-full tracking-wide;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #FF6B35, #F72585);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-radial-orange {
+    background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
+  }
+
+  .bg-radial-pink {
+    background: radial-gradient(circle, rgba(247,37,133,0.12) 0%, transparent 70%);
+  }
+
+  .animation-delay-150 { animation-delay: 150ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-1000 { animation-delay: 1000ms; }
+  .animation-delay-1500 { animation-delay: 1500ms; }
+  .animation-delay-2000 { animation-delay: 2000ms; }
+}
